@@ -11,6 +11,7 @@ const PostsPage = () => {
     }
     getPosts()
   }, [])
+  
   return (
     <div>PostsPage
       <ol>

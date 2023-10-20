@@ -1,7 +1,11 @@
 import { useState } from "react"
+import { useNavigate } from "react-router-dom"
 
 
 const CreatePostPage = () => {
+
+	const navigate = useNavigate()
+
 	const [title, setTitle] = useState('')
 	const [body, setBody] = useState('')
 
@@ -21,14 +25,16 @@ const CreatePostPage = () => {
          body: JSON.stringify(postData),
 		})
 			.then((res) => {
-				if (res.ok === 201) {
+				if (res.ok >= 201) {
 					console.log("Post created successfully");
 					setTitle('');
 					setBody('');
+					navigate('/posts');
 				} else {
 					console.log("Something went wrong");
 					setTitle('');
 					setBody('');
+					navigate('/posts');
 				}
 			})
 			.catch((err) => {

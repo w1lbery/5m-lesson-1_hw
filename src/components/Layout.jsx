@@ -7,7 +7,7 @@ const Layout = () => {
     <div>
         <Navbar />
         <Outlet />
-        <footer>Home-Work #1</footer>
+        <footer>Home-Work #2</footer>
     </div>
   )
 }
